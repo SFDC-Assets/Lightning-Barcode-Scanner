@@ -9,11 +9,11 @@ This package contains a Lightning component and other support to scan barcodes a
 
 As of Winter '21, Salesforce supports native barcode scanning on supported devices. This Lightning Web Component allows a user to scan a barcode and either open a scanned URL or take action on the scanned text.
 
-**NOTE**: *Barcode scanning capability as of this writing is still in beta in Salesforce, with all of the caveats associated with that. All of my demo components are demo quality only, although I try to make them as good as possible (see the disclaimer below). As always, use at your own risk*
+**NOTE**: *Barcode scanning capability as of this writing is still in beta in Salesforce, with all of the caveats associated with that. All of my demo components are demo quality only, although I try to make them as good as possible (see the disclaimer below). As always, use at your own risk.*
 
 ## Installation and Setup
 
-Read the disclaimer below and click on the **Install the Package** link. This will install all the components, objects, and other metadata to your org.
+Read the disclaimer below and click on the **Install the Package** link. This will install all the components, flows, Apex classes, and other metadata to your org.
 
 When installing, select the "Compile only the Apex in the package" option under the Advanced Options.
 

@@ -12,7 +12,7 @@
         <apexClass>BarcodeScannerController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <description>Grants access to Apex class for running the Barcode Scanner Lightning Web Component.</description>
+    <description>Grants access to Apex classes for running the Barcode Scanner Lightning Web Component.</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Barcode Scanner</label>
 </PermissionSet>
