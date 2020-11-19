@@ -27,6 +27,10 @@ The component supports several action types:
 - **Flow Execution**: scans arbitary text which can be passed to the `BarcodeText` input variable in an autolaunched flow that you specify.
 - **Apex Execution** scans arbitary text which can be passed to an Apex class that you specify. The Apex class must implement the `BarcodeScannerApexItem` interface.
 
+### Salesforce Mobile Links
+
+If you create a URL that begins with `salesforce1://`, you can view Salesforce records (as well as edit, follow, and download them) directly inside the Salesforce Mobile app. For a complete list of things you can do with this URL scheme, (check out the documentation)[https://resources.docs.salesforce.com/sfdc/pdf/salesforce1_url_schemes.pdf].
+
 ## How to Deploy This Package to Your Org
 
 I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com) and I develop solutions for my customers to demonstrate the capabilities of the amazing Salesforce platform. _This package represents functionality that I have used for demonstration purposes and the content herein is definitely not ready for actual production use; specifically, it has not been tested extensively nor has it been written with security and access controls in mind. By installing this package, you assume all risk for any consequences and agree not to hold me or my company liable._ If you are OK with that ...
