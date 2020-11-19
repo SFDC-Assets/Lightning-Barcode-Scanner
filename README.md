@@ -35,9 +35,9 @@ If you create a URL that begins with `salesforce1://`, you can view Salesforce r
 
 ## Creating and Embedding Barcodes
 
-There are numerous free barcode generators around the web that you can use to generate barcode images for your demos. For example, you can embed a contact Id into a Salesforce VisualForce email template using merge feels like this:
+There are numerous free barcode generators around the web that you can use to generate barcode images for your demos. For example, you can embed a barcode for a record Id into a Salesforce VisualForce email template using merge fields like this:
 ```
-<apex:image id="theImage" value="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={!ContactId}" width="150" height="150"/>
+<apex:image id="theImage" value="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={!Id}" width="150" height="150" />
 ```
 Similarly, you can create formula fields inside your Salesforce records using syntax like:
 ```
