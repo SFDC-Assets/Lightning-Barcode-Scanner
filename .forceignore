@@ -1,0 +1,31 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+# Standard metadata
+package.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+
+force-app/main/default/applications/standard__LightningSales.app-meta.xml
+standard__LightningSales.app
+Barcode_Scanner.flexipage
+Barcode_Scanner.tab
+force-app/main/default/appMenus/Salesforce1.appMenu-meta.xml
+force-app/main/default/profiles/Admin.profile-meta.xml
+Admin.profile
+force-app/main/default/profiles/Custom%3A Marketing Profile.profile-meta.xml
+Custom%3A Marketing Profile.profile
+force-app/main/default/profiles/Custom%3A Sales Profile.profile-meta.xml
+Custom%3A Sales Profile.profile
+force-app/main/default/profiles/Custom%3A Support Profile.profile-meta.xml
+Custom%3A Support Profile.profile
+force-app/main/default/objects/Account/listViews/All.listView-meta.xml
+force-app/main/default/objects/Contact/listViews/All.listView-meta.xml
+Account.All.listView
+Contact.All.listView

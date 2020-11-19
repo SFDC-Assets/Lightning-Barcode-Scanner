@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Barcode Scanner</masterLabel>
+    <description>Scans a barcode and returns the text for further processing.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__UtilityBar</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage, lightning__HomePage, lightning__RecordPage, lightning__UtilityBar, lightningCommunity__Default">
+            <property name="actionType" label="Action type" type="String" datasource="Scan a URL,Run a Flow,Run Apex" default="Scan a URL" description="The kind of action you wish the component to take." required="true" />
+            <property name="cardTitle" label="Card Title" type="String" default="Barcode Scanner" description="The title to be used at the top of the card." />
+            <property name="hideComponentIfNoScanner" label="Hide if no scanner available" type="Boolean" default="false" description="Hide the component entirely if no scanner is available; otherwise just show a greyed-out button." />
+            <property name="debug" label="Show debug panel after scan" type="Boolean" default="false" description="Show the raw text of the scanned barcode in a panel after the scan is complete." />
+            <property name="buttonLabel" label="Button label (optional)" type="String" default="Scan Barcode" description="The label on the button that initiates the barcode scan (defaults to 'Barcode Scanner')." />
+            <property name="instructions" label="Instructions (optional)" type="String" default="Press the button below to open the camera. Position a barcode in the scanner window to scan it." description="Instructions for using the bar code scanner (defaults to helpful instructions)." />
+            <property name="flowApiName" label="API name of flow" type="String" description="API name of flow to run with text scanned from barcode (required if the action type is 'Run a Flow')." />
+            <property name="apexClassName" label="Name of Apex class" type="String" description="Name of the Apex class to run with text scanned from barcode (required if the action type is 'Run Apex')." />
+            <property name="successMessage" label="Flow/Apex success message" type="String" default="Success!" description="A message that will appear in a toast if the flow or Apex class is successfully run." />
+        </targetConfig>
+    </targetConfigs>
+  </LightningComponentBundle>

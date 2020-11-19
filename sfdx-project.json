@@ -1,0 +1,18 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "Barcode Scanner",
+            "versionName": "Version 1.0.0",
+            "versionNumber": "1.0.0.0"
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "50.0",
+    "packageAliases": {
+        "Barcode Scanner": "0Ho2E000000008FSAQ",
+        "Barcode Scanner@1.0.0-0": "04t2E000003ocEcQAI"
+    }
+}
