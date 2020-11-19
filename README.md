@@ -29,7 +29,7 @@ The component supports several action types:
 
 ### Salesforce Mobile Links
 
-If you create a URL that begins with `salesforce1://`, you can view Salesforce records (as well as edit, follow, and download them) directly inside the Salesforce Mobile app. For a complete list of things you can do with this URL scheme, (check out the documentation)[https://resources.docs.salesforce.com/sfdc/pdf/salesforce1_url_schemes.pdf].
+If you create a URL that begins with `salesforce1://`, you can view Salesforce records (as well as edit, follow, and download them) directly inside the Salesforce Mobile app. For a complete list of things you can do with this URL scheme, [check out the documentation](https://resources.docs.salesforce.com/sfdc/pdf/salesforce1_url_schemes.pdf).
 
 ## How to Deploy This Package to Your Org
 
