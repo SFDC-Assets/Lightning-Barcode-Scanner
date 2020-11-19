@@ -9,6 +9,8 @@ This package contains a Lightning component and other support to scan barcodes a
 
 As of Winter '21, Salesforce supports native barcode scanning on supported devices. This Lightning Web Component allows a user to scan a barcode and either open a scanned URL or take action on the scanned text.
 
+**NOTE**: *Barcode scanning capability as of this writing is still in beta in Salesforce, with all of the caveats associated with that. All of my demo components are demo quality only, although I try to make them as good as possible (see the disclaimer below). As always, use at your own risk*
+
 ## Installation and Setup
 
 Read the disclaimer below and click on the **Install the Package** link. This will install all the components, objects, and other metadata to your org.
@@ -23,13 +25,17 @@ Users can configure almost all of the strings in the component, including the ca
 
 The component supports several action types:
 
-- **URL Scanning**: scans a URL that your device supports and opens it in your device.
+- **URL Scanning**: scans a URL that your device supports and opens it on your device.
 - **Flow Execution**: scans arbitary text which can be passed to the `BarcodeText` input variable in an autolaunched flow that you specify.
-- **Apex Execution** scans arbitary text which can be passed to an Apex class that you specify. The Apex class must implement the `BarcodeScannerApexItem` interface.
+- **Apex Execution**: scans arbitary text which can be passed to an Apex class that you specify. The Apex class must implement the `BarcodeScannerApexItem` interface.
 
 ### Salesforce Mobile Links
 
-If you create a URL that begins with `salesforce1://`, you can view Salesforce records (as well as edit, follow, and download them) directly inside the Salesforce Mobile app. For a complete list of things you can do with this URL scheme, [check out the documentation](https://resources.docs.salesforce.com/sfdc/pdf/salesforce1_url_schemes.pdf).
+If you create a URL that begins with `salesforce1://`, you can view Salesforce records (as well as edit, follow, and download them) directly inside the Salesforce Mobile app. For a complete discussion of how to format URLs with this scheme, [check out the documentation](https://resources.docs.salesforce.com/sfdc/pdf/salesforce1_url_schemes.pdf).
+
+## Creating and Embedding Barcodes
+
+There are numerous free barcode generators around the web
 
 ## How to Deploy This Package to Your Org
 
