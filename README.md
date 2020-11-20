@@ -58,4 +58,4 @@ Thanks to Salesforce Platform specialist Troy Hedges for suggesting the flow and
 
 [John Meyer / johnsfdemo](https://github.com/johnsfdemo)
 
-**Current Version**: 1.1
+**Current Version**: 1.1.1
