@@ -88,7 +88,6 @@ export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 					]
 				})
 				.then((result) => {
-					this.scanComplete = true;
 					this.scannedBarcode = result.value;
 					this.handleBarCode();
 				})
@@ -104,6 +103,7 @@ export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 				})
 				.finally(() => {
 					this.scanner.endCapture();
+					this.scanComplete = true;
 				});
 		}
 	}

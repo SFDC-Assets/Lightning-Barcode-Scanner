@@ -11,15 +11,9 @@ import { getBarcodeScanner } from 'lightning/mobileCapabilities';
 export default class BarcodeScannerFlowComponent extends LightningElement {
 	scanner;
 	scanButtonDisabled = false;
-	scanComplete = false;
-
-	get showDebugWindow() {
-		return this.debug && this.scanComplete;
-	}
 
 	@api scannedBarcode = '';
 	@api buttonLabel = 'Scan Barcode';
-	@api debug = false;
 	@api successMessage = 'Success!';
 
 	connectedCallback() {
@@ -29,7 +23,6 @@ export default class BarcodeScannerFlowComponent extends LightningElement {
 
 	handleBeginScanClick(event) {
 		this.scannedBarcode = '';
-		this.scanComplete = false;
 		if (this.scanner != null && this.scanner.isAvailable()) {
 			this.scanner
 				.beginCapture({
@@ -47,7 +40,6 @@ export default class BarcodeScannerFlowComponent extends LightningElement {
 					]
 				})
 				.then((result) => {
-					this.scanComplete = true;
 					this.dispatchEvent(
 						new ShowToastEvent({
 							message: this.successMessage,

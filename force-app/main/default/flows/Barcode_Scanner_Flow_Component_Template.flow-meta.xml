@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>50.0</apiVersion>
-    <description>Template that shows how the Barcode Scanner flow component can capture and store barcode text inside a flow.</description>
+    <description>Template showing how the Barcode Scanner flow component can capture and store barcode text inside a flow.</description>
     <interviewLabel>Barcode Scanner Flow Component Template {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Barcode Scanner Flow Component Template</label>
     <processMetadataValues>
@@ -28,9 +28,9 @@
         <label>Confirmation Screen</label>
         <locationX>176</locationX>
         <locationY>398</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <fields>
             <name>Confirmation_Message</name>
             <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(136, 136, 136);&quot;&gt;The scanned barcode text is:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: courier;&quot;&gt;{!Scanned_Barcode_Text}&lt;/span&gt;&lt;/p&gt;</fieldText>
@@ -44,9 +44,9 @@
         <label>Scan Barcode Screen</label>
         <locationX>176</locationX>
         <locationY>278</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Confirmation_Screen</targetReference>
         </connector>
@@ -56,19 +56,13 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Scan_Barcode_Button</name>
+            <name>Barcode_Scanner_Button</name>
             <extensionName>c:barcodeScannerFlowComponent</extensionName>
             <fieldType>ComponentInstance</fieldType>
             <inputParameters>
                 <name>successMessage</name>
                 <value>
-                    <stringValue>The code was scanned successfully</stringValue>
-                </value>
-            </inputParameters>
-            <inputParameters>
-                <name>debug</name>
-                <value>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>Barcode successfully scanned</stringValue>
                 </value>
             </inputParameters>
             <isRequired>true</isRequired>
@@ -85,9 +79,9 @@
         <label>Welcome Screen</label>
         <locationX>176</locationX>
         <locationY>158</locationY>
-        <allowBack>true</allowBack>
+        <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
+        <allowPause>false</allowPause>
         <connector>
             <targetReference>Scan_Barcode_Screen</targetReference>
         </connector>
