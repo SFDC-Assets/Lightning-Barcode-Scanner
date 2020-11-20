@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+     <isExposed>true</isExposed>
+    <masterLabel>Barcode Scanner</masterLabel>
+    <description>Lightning flow component that scans a barcode and returns the text for further processing.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="scannedBarcode" role="outputOnly" label="Variable to store barcode text" type="String" description="Variable in which to store the scanned barcode text." />
+            <property name="debug" role="inputOnly" label="Show debug panel after scan" type="Boolean" default="false" description="Show the raw text of the scanned barcode in a panel after the scan is complete." />
+            <property name="buttonLabel" role="inputOnly" label="Button label (optional)" type="String" default="Scan Barcode" description="The label on the button that initiates the barcode scan (defaults to 'Barcode Scanner')." />
+            <property name="successMessage" role="inputOnly" label="Flow/Apex success message" type="String" default="Success!" description="A message that will appear in a toast if the flow or Apex class is successfully run." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

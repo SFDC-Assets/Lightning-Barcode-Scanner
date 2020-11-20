@@ -3,7 +3,7 @@
     <apiVersion>50.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>Barcode Scanner</masterLabel>
-    <description>Scans a barcode and returns the text for further processing.</description>
+    <description>Lightning web component that scans a barcode and returns the text for further processing.</description>
     <targets>
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
@@ -20,6 +20,7 @@
             <property name="debug" label="Show debug panel after scan" type="Boolean" default="false" description="Show the raw text of the scanned barcode in a panel after the scan is complete." />
             <property name="buttonLabel" label="Button label (optional)" type="String" default="Scan Barcode" description="The label on the button that initiates the barcode scan (defaults to 'Barcode Scanner')." />
             <property name="instructions" label="Instructions (optional)" type="String" default="Press the button below to open the camera. Position a barcode in the scanner window to scan it." description="Instructions for using the bar code scanner (defaults to helpful instructions)." />
+            <property name="instructionsColor" label="Instruction text color (optional)" type="String" default="#888888" description="Color of the instructions text, in rgb(x,y,z) or #xxyyzz format." />
             <property name="flowApiName" label="API name of flow" type="String" description="API name of flow to run with text scanned from barcode (required if the action type is 'Run a Flow')." />
             <property name="apexClassName" label="Name of Apex class" type="String" description="Name of the Apex class to run with text scanned from barcode (required if the action type is 'Run Apex')." />
             <property name="successMessage" label="Flow/Apex success message" type="String" default="Success!" description="A message that will appear in a toast if the flow or Apex class is successfully run." />

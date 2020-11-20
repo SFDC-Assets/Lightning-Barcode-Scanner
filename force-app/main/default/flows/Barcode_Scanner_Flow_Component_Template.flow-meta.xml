@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <description>Template that shows how the Barcode Scanner flow component can capture and store barcode text inside a flow.</description>
+    <interviewLabel>Barcode Scanner Flow Component Template {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Barcode Scanner Flow Component Template</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Confirmation_Screen</name>
+        <label>Confirmation Screen</label>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Confirmation_Message</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(136, 136, 136);&quot;&gt;The scanned barcode text is:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: courier;&quot;&gt;{!Scanned_Barcode_Text}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Scan_Barcode_Screen</name>
+        <label>Scan Barcode Screen</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Confirmation_Screen</targetReference>
+        </connector>
+        <fields>
+            <name>Barcode_Instructions</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(136, 136, 136);&quot;&gt;Press the button below to open the camera. Position a barcode in the scanner window to scan it.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Scan_Barcode_Button</name>
+            <extensionName>c:barcodeScannerFlowComponent</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>successMessage</name>
+                <value>
+                    <stringValue>The code was scanned successfully</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>debug</name>
+                <value>
+                    <booleanValue>false</booleanValue>
+                </value>
+            </inputParameters>
+            <isRequired>true</isRequired>
+            <outputParameters>
+                <assignToReference>Scanned_Barcode_Text</assignToReference>
+                <name>scannedBarcode</name>
+            </outputParameters>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Welcome_Screen</name>
+        <label>Welcome Screen</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Scan_Barcode_Screen</targetReference>
+        </connector>
+        <fields>
+            <name>Welcome_Message</name>
+            <fieldText>&lt;p&gt;Welcome to the Lightning Barcode Scanner template. You can use this to see how the Barcode Scanner Lightning component works inside a flow.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Welcome_Screen</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>This variable contains the text that was scanned by the Barcode Scanner Lightning component.</description>
+        <name>Scanned_Barcode_Text</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+        <value>
+            <stringValue/>
+        </value>
+    </variables>
+</Flow>

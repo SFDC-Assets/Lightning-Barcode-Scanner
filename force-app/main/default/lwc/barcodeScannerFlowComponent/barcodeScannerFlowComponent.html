@@ -1,0 +1,19 @@
+<template>
+	<div class="slds-align_absolute-center slds-var-p-vertical_x-small">
+		<lightning-button
+			variant="brand"
+			disabled={scanButtonDisabled}
+			icon-name="utility:photo"
+			label={buttonLabel}
+			title="Open a camera view and look for a barcode to scan"
+			onclick={handleBeginScanClick}
+		>
+		</lightning-button>
+	</div>
+	<template if:true={showDebugWindow}>
+		<p class="slds-var-p-vertical_small slds-text-body_small">Text of the scanned barcode:</p>
+		<lightning-tile class="slds-border slds-tile_board slds-box slds-box_small">
+			<span class="slds-text-font_monospace" style="word-wrap: break-word">{scannedBarcode}</span>
+		</lightning-tile>
+	</template>
+</template>

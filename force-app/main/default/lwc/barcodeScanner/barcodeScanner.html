@@ -4,24 +4,13 @@
 			<div slot="title">
 				<h2><strong>{cardTitle}</strong></h2>
 			</div>
-			<div slot="actions">
-				<lightning-button-icon-stateful
-					variant="neutral"
-					label="Help"
-					icon-name="utility:question"
-					selected={helpSectionVisible}
-					onclick={handleHelpButton}
-				>
-				</lightning-button-icon-stateful>
-			</div>
-
 			<div class="slds-p-horizontal_medium">
-				<p class="slds-var-p-vertical_small slds-text-color_weak">{instructions}</p>
-
-				<div class="slds-text-align_center slds-var-p-vertical_small">
+				<p class="slds-var-p-vertical_small">
+					<span style={instructionTextStyle}>{instructions}</span>
+				</p>
+				<div class="slds-align_absolute-center slds-var-p-vertical_x-small">
 					<lightning-button
 						variant="brand"
-						class="slds-var-m-left_x-small"
 						disabled={scanButtonDisabled}
 						icon-name="utility:photo"
 						label={buttonLabel}
@@ -30,27 +19,10 @@
 					>
 					</lightning-button>
 				</div>
-
 				<template if:true={showDebugWindow}>
 					<p class="slds-var-p-vertical_small slds-text-body_small">Text of the scanned barcode:</p>
 					<lightning-tile class="slds-border slds-tile_board slds-box slds-box_small">
 						<span class="slds-text-font_monospace" style="word-wrap: break-word">{scannedBarcode}</span>
-					</lightning-tile>
-				</template>
-
-				<template if:true={helpSectionVisible}>
-					<lightning-tile class="slds-var-p-top_small slds-tile_board slds-box slds-theme_shade">
-						<lightning-icon slot="media" icon-name="utility:info"> </lightning-icon>
-						<p class="slds-hyphenate slds-text-body_small">
-							You can always find the latest version of this component, as well as all documentation, in&nbsp;
-							<lightning-formatted-url
-								label="this GitHub repository"
-								value="https://github.com/SFDC-Assets/Lightning-Barcode-Scanner"
-								target="_blank"
-							>
-							</lightning-formatted-url>
-							.
-						</p>
 					</lightning-tile>
 				</template>
 			</div>

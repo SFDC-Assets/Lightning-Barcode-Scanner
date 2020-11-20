@@ -3,25 +3,27 @@
 //  This code is provided AS IS, with no warranty or guarantee of suitability for use.
 //  Contact: john.meyer@salesforce.com
 
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getBarcodeScanner } from 'lightning/mobileCapabilities';
 import runFlow from '@salesforce/apex/BarcodeScannerController.runFlow';
 import runApex from '@salesforce/apex/BarcodeScannerController.runApex';
 
-export default class BarcodeScannerExample extends NavigationMixin(LightningElement) {
+export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 	scanner;
 	scannedBarcode = '';
 	scanButtonDisabled = false;
 	scanComplete = false;
-	helpSectionVisible = false;
 
 	get showComponent() {
 		return this.scanner.isAvailable && !this.hideComponentIfNoScanner;
 	}
 	get showDebugWindow() {
 		return this.debug && this.scanComplete;
+	}
+	get instructionTextStyle() {
+		return `color:${this.instructionsColor};`;
 	}
 	get missingFlowName() {
 		return this.actionType === 'Run a Flow' && (this.flowApiName === null || this.flowApiName === '');
@@ -34,6 +36,7 @@ export default class BarcodeScannerExample extends NavigationMixin(LightningElem
 	@api cardTitle = 'Barcode Scanner';
 	@api buttonLabel = 'Scan Barcode';
 	@api instructions = 'Press the button below to open the camera. Position a barcode in the scanner window to scan it.';
+	@api instructionsColor = '#888888';
 	@api debug = false;
 	@api actionType = 'Scan a URL';
 	@api flowApiName = null;
@@ -166,9 +169,5 @@ export default class BarcodeScannerExample extends NavigationMixin(LightningElem
 				});
 				break;
 		}
-	}
-
-	handleHelpButton(event) {
-		this.helpSectionVisible = !this.helpSectionVisible;
 	}
 }
