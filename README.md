@@ -13,7 +13,7 @@ As of the Winter '21 release, Salesforce implements native barcode scanning on s
 
 ## Installation and Setup
 
-[Read the disclaimer below](#how-to-deploy-this-package-to-your-org) and click on the ![Deploy to Salesforce](https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png) button. This will install all the components, flows, Apex classes, and other metadata to your org.
+[Read the disclaimer below](#how-to-deploy-this-package-to-your-org) and click on the **Deploy to Salesforce** button. This will install all the components, flows, Apex classes, and other metadata to your org.
 
 ![Installation](images/Installation.png)
 
