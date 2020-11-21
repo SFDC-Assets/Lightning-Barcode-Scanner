@@ -13,13 +13,11 @@ As of the Winter '21 release, Salesforce implements native barcode scanning on s
 
 ## Installation and Setup
 
-[Read the disclaimer below](#how-to-deploy-this-package-to-your-org) and click on the **Deploy to Salesforce** button. This will install all the components, flows, Apex classes, and other metadata to your org.
+[Read the disclaimer below](#how-to-deploy-this-package-to-your-org) and click on the **Deploy to Salesforce** button. This will install all the components, flows, Apex classes, and other metadata to your org. When installing, choose to install for all users and select the "Compile only the Apex in the package" option under _Advanced Options_.
 
 ![Installation](images/Installation.png)
 
-When installing, choose to install for all users and select the "Compile only the Apex in the package" option under the Advanced Options.
-
-**Important**: You must assign the `Barcode Scanner` permission set to anyone who needs to use the component. This permission set grants access to the Apex classes that allow full functionality of the component.
+**Important**: After installation, you must assign the `Barcode Scanner` permission set to anyone who needs to use the component. This permission set grants access to the Apex classes that allow full functionality of the component.
 
 ## Component 1: Standalone Lightning Component
 
