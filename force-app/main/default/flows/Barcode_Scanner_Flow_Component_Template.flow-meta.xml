@@ -65,6 +65,12 @@
                     <stringValue>Barcode successfully scanned</stringValue>
                 </value>
             </inputParameters>
+            <inputParameters>
+                <name>autoAdvance</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
             <isRequired>true</isRequired>
             <outputParameters>
                 <assignToReference>Scanned_Barcode_Text</assignToReference>

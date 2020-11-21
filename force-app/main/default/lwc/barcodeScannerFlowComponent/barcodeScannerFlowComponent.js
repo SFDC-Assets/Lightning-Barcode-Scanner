@@ -4,7 +4,7 @@
 //  Contact: john.meyer@salesforce.com
 
 import { LightningElement, api } from 'lwc';
-import { FlowAttributeChangeEvent } from 'lightning/flowSupport';
+import { FlowAttributeChangeEvent, FlowNavigationNextEvent } from 'lightning/flowSupport';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { getBarcodeScanner } from 'lightning/mobileCapabilities';
 
@@ -15,6 +15,8 @@ export default class BarcodeScannerFlowComponent extends LightningElement {
 	@api scannedBarcode = '';
 	@api buttonLabel = 'Scan Barcode';
 	@api successMessage = 'Success!';
+	@api autoAdvance = false;
+	@api availableActions = [];
 
 	connectedCallback() {
 		this.scanner = getBarcodeScanner();
@@ -40,14 +42,17 @@ export default class BarcodeScannerFlowComponent extends LightningElement {
 					]
 				})
 				.then((result) => {
-					this.dispatchEvent(
-						new ShowToastEvent({
-							message: this.successMessage,
-							variant: 'success'
-						})
-					);
+					if (!this.autoAdvance)
+						this.dispatchEvent(
+							new ShowToastEvent({
+								message: this.successMessage,
+								variant: 'success'
+							})
+						);
 					this.scannedBarcode = result.value;
 					this.dispatchEvent(new FlowAttributeChangeEvent('scannedBarcode', result.value));
+					if (this.availableActions.find((action) => action === 'NEXT') && this.autoAdvance)
+						this.dispatchEvent(new FlowNavigationNextEvent());
 				})
 				.catch((error) => {
 					this.dispatchEvent(

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>50.0</apiVersion>
-     <isExposed>true</isExposed>
+    <isExposed>true</isExposed>
     <masterLabel>Barcode Scanner</masterLabel>
     <description>Lightning flow component that scans a barcode and returns the captured text.</description>
     <targets>
@@ -11,7 +11,8 @@
         <targetConfig targets="lightning__FlowScreen">
             <property name="scannedBarcode" role="outputOnly" label="Scanned barcode text" type="String" description="Variable in which to store the scanned barcode text." />
             <property name="buttonLabel" role="inputOnly" label="Button label" type="String" default="Scan Barcode" description="The label on the button that initiates the barcode scan." />
-            <property name="successMessage" role="inputOnly" label="Success message" type="String" default="Success!" description="A message that will appear in a toast when the barcode is successfully scanned." />
+            <property name="successMessage" role="inputOnly" label="Success message" type="String" default="Success!" description="A message that will appear in a toast when the barcode is successfully scanned (not shown if 'Automatically advance' is true)." />
+            <property name="autoAdvance" role="inputOnly" label="Automatically advance" type="Boolean" default="false" description="Suppress the success message and automatically advance to the next step in the flow after a successful scan (you must have a 'Next' button on the page for this to work)." />
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>
