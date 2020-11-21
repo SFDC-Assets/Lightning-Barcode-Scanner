@@ -31,12 +31,16 @@ You can customize all the UI elements in the component, including the card title
 
 The component supports several action types:
 
-- **Scan a URL**: This action type scans a URL and opens it on your device. The URL can be any kind that your device supports. If you create a URL that begins with `salesforce1://`, you can view Salesforce records (as well as edit, follow, and download them) directly inside the [Salesforce Mobile app](https://www.salesforce.com/solutions/mobile/overview/). For example, if you have an account in your org whose record Id is 0015B00001EU6p2QAD, you can encode the string `salesforce1:://sObject/0015B00001EU6p2QAD/view` in a barcode, scan it using this action, and the component will open up the record page for the account within Salesforce Mobile (see [Creating and Enbedding Barcodes](#creating-and-embedding-barcodes) below). For a complete discussion of everything you can do with this scheme, [check out the documentation](https://resources.docs.salesforce.com/sfdc/pdf/salesforce1_url_schemes.pdf).
-- **Run a Flow**: This action type scans a barcode whose text can be passed to the `BarcodeText` input variable in an autolaunched flow whose API name you specify in the component customization panel of Lightning App Builder. For example, you might want to capture the Id of a Salesforce record that you wish to use to create related records or perform other processing on. To use this action, you must create a resource in your flow called `BarcodeText` that can receive the scanned text from this component. There is an example flow in this package called `Barcode Scanner Template` that illustrates the scenario (make a copy of it if you want to modify it, as any changes to the flow will be overwritten if you upgrade the package to a new version). The flow simply posts the text that was scanned to the running user's Chatter feed.
-- **Run Apex**: Similar to **Run a Flow**, this action type does the same thing except that it passes the scanned text into an Apex class that you specify in the component customization panel of Lightning App Builder. There is an example Apex class called `BarcodeScannerApexTemplate` in the package which illustrates the code (make a copy of it if you want to modify it, as any changes to the class will be overwritten if you upgrade the package to a new version). This example class simply posts the text that was scanned to the running user's Chatter feed. The Apex class must implement the `BarcodeScannerApexItem` interface:
+- **Scan a URL**: This action type scans a URL and opens it on your device. The URL can be any kind that your device supports. If you create a URL that begins with `salesforce1://`, you can view Salesforce records (as well as edit, follow, and download them) directly inside the [Salesforce Mobile app](https://www.salesforce.com/solutions/mobile/overview/). For example, if you have an account in your org whose record Id is 0015B00001EU6p2QAD, you can encode the string `salesforce1://sObject/0015B00001EU6p2QAD/view` in a barcode, scan it using this action, and the component will open up the record page for the account within Salesforce Mobile (see [Creating and Enbedding Barcodes](#creating-and-embedding-barcodes-in-salesforce) below). For a complete discussion of everything you can do with this scheme, [check out the documentation](https://resources.docs.salesforce.com/sfdc/pdf/salesforce1_url_schemes.pdf).
+- **Run a Flow**: This action type scans a barcode whose text can be passed to the `BarcodeText` input variable in an autolaunched flow whose API name you specify in the component customization panel of Lightning App Builder. For example, you might want to capture the Id of a Salesforce record that you wish to use to create related records or perform other processing on. To use this action, you must create a resource in your flow called `BarcodeText` that can receive the scanned text from this component. The package includes an example flow template called `Barcode Scanner Template` that illustrates the scenario (make a copy of it if you want to modify it, as any changes to the flow will be overwritten if you upgrade the package to a new version). The flow simply posts the text that was scanned to the running user's Chatter feed.
+- **Run Apex**: Similar to **Run a Flow**, this action type does the same thing except that it passes the scanned text into an Apex class that you specify in the component customization panel of Lightning App Builder. The package includes an example Apex class called `BarcodeScannerApexTemplate` which illustrates the code (make a copy of it if you want to modify it, as any changes to the class will be overwritten if you upgrade the package to a new version). This example class simply posts the text that was scanned to the running user's Chatter feed. The Apex class must implement the `BarcodeScannerApexItem` interface:
 
 ```apex
 public interface BarcodeScannerApexItem {
+    // Executes Apex code with the text of the scanned barcode as input.
+    //
+    // The parameters represent:
+    //    barCodeText: the text of the scanned barcode.
     void execute (String barCodeText);
 }
 ```
@@ -62,7 +66,7 @@ You have two options regarding the behavior of the component after a code is suc
 
 There is an example flow called `Barcode Scanner Flow Component Template` included in the package which illustrates the component (make a copy of the template if you want to modify it, as any changes to the flow will be overwritten if you upgrade the package to a new version).
 
-## Creating and Embedding Barcodes
+## Creating and Embedding Barcodes in Salesforce
 
 There are numerous [free barcode generators](#references) around the web that you can use to generate barcode images for your demos. For example, you can embed a barcode for a record Id into an HTML email template using a merge field like this:
 
@@ -95,8 +99,10 @@ I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com)
 
 ## References
 
-- Free online [QR code generator](http://goqr.me/api/doc/create-qr-code/)
-
+- Free online [QR code generator](http://goqr.me/api/doc/create-qr-code/) that can generate images for use with Salesforce demos.
+- The components in this package recognizes these standard barcode types: [Code 128](https://www.barcodefaq.com/1d/code-128/), [Code 39](https://www.barcodefaq.com/1d/code-39/), [Code 93](https://www.barcodefaq.com/barcode-match/), [Data Matrix](https://www.barcodefaq.com/2d/data-matrix/), [EAN-13/GTIN-13](https://www.barcodefaq.com/1d/upc-ean/), [EAN-8/GTIN-8](https://www.barcodefaq.com/1d/upc-ean/), [Interleaved 2 of 5](https://www.barcodefaq.com/barcode-match/), [PDF417](https://www.barcodefaq.com/2d/pdf417/), [QR-Code](https://www.barcodefaq.com/2d/qr-code/), [UPC-E/GTIN-12](https://www.barcodefaq.com/1d/upc-ean/)
+- [Salesforce BarcodeScanner API](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_lightning_barcodescanner)
+- [Barcoding for Beginners](https://www.barcodefaq.com/barcoding-for-beginners/)
 ## Maintainer
 
 [John Meyer / johnsfdemo](https://github.com/johnsfdemo)
