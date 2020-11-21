@@ -49,7 +49,7 @@ You also have the option to open a debug panel under the scan button after the b
 
 This option allows you to insert a barcode scan into a flow. The scanned text will be placed in a variable that you must create as a resource in your flow:
 
-![Variable](images/Scanner_Text_Variable)
+![Variable](images/Scanner_Text_Variable.png)
 
 To use the scanner, simply add the flow component to your canvas:
 
