@@ -2,7 +2,7 @@
 
 <h1 align="center">LIGHTNING BARCODE SCANNER</h1>
 <p align="center">
-This package contains a Lightning component and other support to scan barcodes and optionally run Salesforce flows or Apex classes.
+This package contains Lightning components and other support to scan barcodes natively in Salesforce and take actions within Salesforce using the text that was scanned in.
 </p>
 
 ## Summary
