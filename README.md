@@ -21,7 +21,7 @@ As of the Winter '21 release, Salesforce implements native barcode scanning on s
 
 ## Component 1: Standalone Lightning Component
 
-Create a Lightning app, home, or record page with the Lightning App Builder and drag the `Barcode Scanner` custom component on the page where you would like to place it.
+Create a Lightning app, home, or record page with the Lightning App Builder and drag the `Barcode Scanner` custom component onto the canvas where you would like to place it.
 
 ![Lightning App Builder](images/Lightning_App_Builder.png)
 
@@ -49,7 +49,7 @@ You also have the option to open a debug panel under the scan button after the b
 
 ## Component 2: Flow Component
 
-This option allows you to insert a barcode scan button into a screen flow. The scanned text will be placed in a variable that you must create as a resource in your flow:
+This component allows you to insert a barcode scan button into a screen flow. The scanned text will be placed in a variable that you must create as a resource in your flow:
 
 ![Variable](images/Scanner_Text_Variable.png)
 
