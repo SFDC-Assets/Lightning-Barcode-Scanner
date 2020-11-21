@@ -57,17 +57,20 @@ To use the scanner, simply add the flow component to your canvas:
 
 You have two options regarding the behavior of the component after a code is successfully scanned:
 
-- You can remain on the same screen of the flow. In this case, a toast will appear informing you that the scan was successfully performed. You have the option of customizing the message that appears in the toast.
-- You can have the component automatically advance to the next item in the flow. For this to work, you must have a "Next" button on your screen. If you choose this option, the next step in the flow will be performed and no toast message will appear, even if you have customized a success message for it.
+- **You can remain on the same screen of the flow**. In this case, a toast will appear informing you that the scan was successfully performed. You have the option of customizing the message that appears in the toast.
+- **You can have the component automatically advance to the next item in the flow**. For this to work, you must have a "Next" button on your screen. If you choose this option, the next step in the flow will be performed and no toast message will appear, even if you have customized a success message for it.
 
 ## Creating and Embedding Barcodes
 
 There are numerous free barcode generators around the web that you can use to generate barcode images for your demos. For example, you can embed a barcode for a record Id into a Salesforce VisualForce email template using merge fields like this:
-```
+
+```html
 <apex:image id="theImage" value="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={!Id}" width="150" height="150" />
 ```
+
 Similarly, you can create formula fields inside your Salesforce records using syntax like:
-```
+
+```excel
 IMAGE('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' & Id, Name, 150, 150)
 ```
 
