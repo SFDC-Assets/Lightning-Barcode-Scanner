@@ -13,7 +13,7 @@ As of the Winter '21 release, Salesforce implements native barcode scanning on s
 
 ## Installation and Setup
 
-Read the disclaimer below and click on the **Install the Package** link. This will install all the components, flows, Apex classes, and other metadata to your org.
+[Read the disclaimer below](#how-to-deploy-this-package-to-your-org) and click on the ![Deploy to Salesforce](https://github.com/afawcett/githubsfdeploy) button. This will install all the components, flows, Apex classes, and other metadata to your org.
 
 ![Installation](images/Installation.png)
 
@@ -90,7 +90,9 @@ IMAGE('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' & Id, Nam
 
 I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com) and I develop solutions for my customers to demonstrate the capabilities of the amazing Salesforce platform. _This package represents functionality that I have used for demonstration purposes and the content herein is definitely not ready for actual production use; specifically, it has not been tested extensively nor has it been written with security and access controls in mind. By installing this package, you assume all risk for any consequences and agree not to hold me or my company liable._ If you are OK with that ...
 
-[Install the Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t2E000003ocF6QAI)
+<a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t2E000003ocF6QAI">
+    <img src="https://github.com/afawcett/githubsfdeploy" alt="Deploy to Salesforce" title="Deploy to Salesforce" />
+</a>
 
 ## Acknowledgements
 
@@ -99,8 +101,8 @@ I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com)
 
 ## References
 
-- Free online [QR code generator](http://goqr.me/api/doc/create-qr-code/) that can generate QR code images for use with Salesforce demos.
-- The components in this package recognizes these standard barcode types: [Code 128](https://www.barcodefaq.com/1d/code-128/), [Code 39](https://www.barcodefaq.com/1d/code-39/), [Code 93](https://www.barcodefaq.com/barcode-match/), [Data Matrix](https://www.barcodefaq.com/2d/data-matrix/), [EAN-13/GTIN-13](https://www.barcodefaq.com/1d/upc-ean/), [EAN-8/GTIN-8](https://www.barcodefaq.com/1d/upc-ean/), [Interleaved 2 of 5](https://www.barcodefaq.com/barcode-match/), [PDF417](https://www.barcodefaq.com/2d/pdf417/), [QR-Code](https://www.barcodefaq.com/2d/qr-code/), [UPC-E/GTIN-12](https://www.barcodefaq.com/1d/upc-ean/)
+- Here is a free online [QR code generator](http://goqr.me/api/doc/create-qr-code/) that can generate QR code images for use with Salesforce demos.
+- The components in this package recognize these standard barcode types: [Code 128](https://www.barcodefaq.com/1d/code-128/), [Code 39](https://www.barcodefaq.com/1d/code-39/), [Code 93](https://www.barcodefaq.com/barcode-match/), [Data Matrix](https://www.barcodefaq.com/2d/data-matrix/), [EAN-13/GTIN-13](https://www.barcodefaq.com/1d/upc-ean/), [EAN-8/GTIN-8](https://www.barcodefaq.com/1d/upc-ean/), [Interleaved 2 of 5](https://www.barcodefaq.com/barcode-match/), [PDF417](https://www.barcodefaq.com/2d/pdf417/), [QR-Code](https://www.barcodefaq.com/2d/qr-code/), [UPC-E/GTIN-12](https://www.barcodefaq.com/1d/upc-ean/).
 - [Salesforce BarcodeScanner API](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_lightning_barcodescanner)
 - [Barcoding for Beginners](https://www.barcodefaq.com/barcoding-for-beginners/)
 ## Maintainer
