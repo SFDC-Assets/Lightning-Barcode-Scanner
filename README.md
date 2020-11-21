@@ -7,9 +7,9 @@ This package contains a Lightning component and other support to scan barcodes a
 
 ## Summary
 
-As of Winter '21, Salesforce implements native barcode scanning on supported devices. The first Lightning component in this package allows a user to scan a barcode and either open a scanned URL or take action on the scanned text as part of a home, app, record, or community page. The second is a Lightning flow component that allows bar code scanning to be part of a flow.
+As of the Winter '21 release, Salesforce implements native barcode scanning on supported devices. The first Lightning component in this package allows a user to scan a barcode and either open a scanned URL or take action on the scanned text as part of a home, app, record, or community page. The second is a Lightning flow component that allows bar code scanning to be part of a flow.
 
-**NOTE**: *The native barcode scanning capability of Salesforce is still in the beta stage and should be used at your own risk. Furthermore, it has not been tested to work with the U.S. Government Cloud nor has been certified within the FedRAMP boundary.*
+**NOTE**: *The native barcode scanning capability of Salesforce is still in the beta stage and should be used at your own risk. Furthermore, purchasing decisions should be made on products from Salesforce that are generally available. This capability will also need to go through Salesforce Government Cloud interoperability testing and may not be within the FedRAMP boundary for U.S. Federal customers.*
 
 ## Installation and Setup
 
