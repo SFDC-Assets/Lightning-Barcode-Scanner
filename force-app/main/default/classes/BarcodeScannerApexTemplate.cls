@@ -12,11 +12,15 @@ public without sharing class BarcodeScannerApexTemplate implements BarcodeScanne
     //
     // The parameters represent:
     //    barCodeText: the text of the scanned barcode.
+    //    recordId: the Id of the record, if the component is in a Lightning record page; null otherwise.
 
-    public static void execute (String barcodeText) {
+    public static void execute (String barcodeText, Id recordId) {
         
         //  Change anything you want in here.  Just be careful of Salesforce governor limits.
 
-        insert new FeedItem (ParentId = UserInfo.getUserId(), Body = 'BarcodeScannerApexTemplate received barcode text: ' + barcodeText);
+        insert new FeedItem (
+            ParentId = UserInfo.getUserId(),
+            Body = 'BarcodeScannerApexTemplate: record Id "' + String.valueOf(recordId) + '" received barcode text: ' + barcodeText
+        );
     }
 }

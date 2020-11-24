@@ -11,7 +11,7 @@
         <inputParameters>
             <name>text</name>
             <value>
-                <stringValue>Barcode text received: {!BarcodeText}</stringValue>
+                <stringValue>Barcode text for record Id &quot;{!recordId}&quot; received: {!BarcodeText}</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -61,5 +61,13 @@
         <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>If the Barcode Scanner component is in a record page, this variable will contain the record Id.</description>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
     </variables>
 </Flow>

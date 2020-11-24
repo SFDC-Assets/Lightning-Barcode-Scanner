@@ -12,6 +12,7 @@ public interface BarcodeScannerApexItem {
     //
     // The parameters represent:
     //    barCodeText: the text of the scanned barcode.
+    //    recordId: set to the Id of the record, if the component is in a Lightning record page; null otherwise.
 
-    void execute (String barCodeText);
+    void execute (String barCodeText, Id recordId);
 }

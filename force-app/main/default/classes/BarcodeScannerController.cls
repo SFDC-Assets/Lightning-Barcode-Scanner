@@ -10,12 +10,13 @@ public with sharing class BarcodeScannerController {
     //
     //  The parameters represent:
     //      flowApiName: the API name of the flow to execute
+    //      recordId: the Id of the record, if the component is in a Lightning record page; null otherwise.
     //      barcodeText: the text scanned in from the barcode
 
     @AuraEnabled
-    public static String runFlow (String flowApiName, String barcodeText) {
+    public static String runFlow (String flowApiName, Id recordId, String barcodeText) {
         try {
-            Flow.Interview.createInterview(flowApiName, new Map<String,Object> { 'BarcodeText' => barcodeText }).start();
+            Flow.Interview.createInterview(flowApiName, new Map<String,Object> { 'BarcodeText' => barcodeText, 'recordId' => recordId }).start();
             return null;
         } catch (Exception e) {
             return e.getMessage();
@@ -27,12 +28,13 @@ public with sharing class BarcodeScannerController {
     //
     //  The parameters represent:
     //      apexClassName: the name of the Apex class to execute. It must implement the BarcodeScannerApexItem interface.
-    //      barcodeText: the text scanned in from the barcode
+    //      recordId: the Id of the record, if the component is in a Lightning record page; null otherwise.
+    //      barcodeText: the text scanned in from the barcode.
     
     @AuraEnabled
-    public static String runApex (String apexClassName, String barcodeText) {
+    public static String runApex (String apexClassName, Id recordId, String barcodeText) {
         try {
-            ((BarcodeScannerApexItem) Type.forName(apexClassName).newInstance()).execute(barcodeText);
+            ((BarcodeScannerApexItem) Type.forName(apexClassName).newInstance()).execute(barcodeText, recordId);
             return null;
         } catch (Exception e) {
             return e.getMessage();

@@ -11,10 +11,10 @@ private without sharing class BarcodeScannerTest {
 
         System.Test.startTest();
 
-        System.assertEquals(null, BarcodeScannerController.runFlow('Barcode_Scanner_Template', 'Text'));
-        System.assertNotEquals(null, BarcodeScannerController.runFlow('Bad_Flow_Name', 'Text'));
-        System.assertEquals(null, BarcodeScannerController.runApex('BarcodeScannerApexTemplate', 'Text'));
-        System.assertNotEquals(null, BarcodeScannerController.runApex('BadApexClassName', 'Text'));
+        System.assertEquals(null, BarcodeScannerController.runFlow('Barcode_Scanner_Template', null, 'Text'));
+        System.assertNotEquals(null, BarcodeScannerController.runFlow('Bad_Flow_Name', null, 'Text'));
+        System.assertEquals(null, BarcodeScannerController.runApex('BarcodeScannerApexTemplate', null, 'Text'));
+        System.assertNotEquals(null, BarcodeScannerController.runApex('BadApexClassName', null, 'Text'));
     
         System.Test.stopTest();
     }

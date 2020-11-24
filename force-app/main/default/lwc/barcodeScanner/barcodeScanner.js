@@ -43,6 +43,9 @@ export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 	@api apexClassName = null;
 	@api successMessage = 'Success!';
 
+	// Set by the page only if in a record context, like a Lightning record page.
+	@api recordId;
+
 	connectedCallback() {
 		this.scanner = getBarcodeScanner();
 		this.scanButtonDisabled =
@@ -121,6 +124,7 @@ export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 			case 'Run a Flow':
 				runFlow({
 					flowApiName: this.flowApiName,
+					recordId: this.recordId,
 					barcodeText: this.scannedBarcode
 				}).then((result) => {
 					if (result === null) {
@@ -146,6 +150,7 @@ export default class BarcodeScanner extends NavigationMixin(LightningElement) {
 			case 'Run Apex':
 				runApex({
 					apexClassName: this.apexClassName,
+					recordId: this.recordId,
 					barcodeText: this.scannedBarcode
 				}).then((result) => {
 					if (result === null) {

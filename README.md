@@ -13,7 +13,7 @@ As of the Winter '21 release, Salesforce implements native barcode scanning on s
 
 ## Installation and Setup
 
-[Read the disclaimer below](#how-to-deploy-this-package-to-your-org) and click on the **Deploy to Salesforce** button. This will install all the components, flows, Apex classes, and other metadata to your org. When installing, choose to install for all users and select the "Compile only the Apex in the package" option under _Advanced Options_.
+[Read the disclaimer below](#how-to-deploy-this-package-to-your-org) and click on the **Install the Package** link. This will install all the components, flows, Apex classes, and other metadata to your org. When installing, choose to install for all users and select the "Compile only the Apex in the package" option under _Advanced Options_.
 
 ![Installation](images/Installation.png)
 
@@ -30,7 +30,7 @@ You can customize all the UI elements in the component, including the card title
 The component supports several "action types":
 
 - **Scan a URL**: This action type scans a URL and opens it on your device. The URL can be any kind that your device supports. If you create a URL that begins with `salesforce1://`, you can view Salesforce records (as well as edit, follow, and download them) directly inside the [Salesforce Mobile app](https://www.salesforce.com/solutions/mobile/overview/). For example, if you have an account in your org whose record _Id_ is 0015B00001EU6p2QAD, you can encode the string `salesforce1://sObject/0015B00001EU6p2QAD/view` in a barcode (see [Creating and Embedding Barcodes](#creating-and-embedding-barcodes-in-salesforce) below), scan it using this action, and the component will open up the record page for the account within Salesforce Mobile. For a complete discussion of everything you can do with this scheme, [check out the documentation](https://resources.docs.salesforce.com/sfdc/pdf/salesforce1_url_schemes.pdf).
-- **Run a Flow**: This action type scans a barcode and passes the text to the `BarcodeText` input variable in an autolaunched flow whose API name you specify in the component customization panel of Lightning App Builder. For example, you might want to capture the _Id_ of a Salesforce record that you wish to use to create related records or perform other processing on. To use this action, you must create a resource in your flow called `BarcodeText` that can receive the scanned text from this component. The package includes an example flow template called `Barcode Scanner Template` that illustrates the scenario (make a copy of it if you want to modify it, as any changes to the flow will be overwritten if you upgrade the package to a new version). The flow simply posts the scanned text to the running user's Chatter feed.
+- **Run a Flow**: This action type scans a barcode and passes the text to the `BarcodeText` input variable in an autolaunched flow whose API name you specify in the component customization panel of Lightning App Builder. For example, you might want to capture the _Id_ of a Salesforce record that you wish to use to create related records or perform other processing on. To use this action, you must create a text variable in your flow called `BarcodeText` that can receive the scanned text from this component. Also, if the component is in a Lightning record page, create another text variable called `recordId` that will receive the _Id_ of the record so you may use it in the flow to manipulate the record itself. The package includes an example flow template called `Barcode Scanner Template` that illustrates the scenario (make a copy of it if you want to modify it, as any changes to the flow will be overwritten if you upgrade the package to a new version). The flow simply posts the scanned text to the running user's Chatter feed.
 - **Run Apex**: Similar to **Run a Flow**, this action type does the same thing except that it passes the scanned text into an Apex class that you specify in the component customization panel of Lightning App Builder. The package includes an example Apex class called `BarcodeScannerApexTemplate` which illustrates the code (make a copy of it if you want to modify it, as any changes to the class will be overwritten if you upgrade the package to a new version). This example class simply posts the scanned text to the running user's Chatter feed. The Apex class must implement the `BarcodeScannerApexItem` interface:
 
 ```apex
@@ -39,7 +39,8 @@ public interface BarcodeScannerApexItem {
     //
     // The parameters represent:
     //    barCodeText: the text of the scanned barcode.
-    void execute (String barCodeText);
+    //    recordId: set to the Id of the record, if the component is in a Lightning record page; null otherwise.
+    void execute (String barCodeText, Id recordId);
 }
 ```
 
@@ -88,9 +89,7 @@ IMAGE('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' & Id, Nam
 
 I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com) and I develop solutions for my customers to demonstrate the capabilities of the amazing Salesforce platform. _This package represents functionality that I have used for demonstration purposes and the content herein is definitely not ready for actual production use; specifically, it has not been tested extensively nor has it been written with security and access controls in mind. By installing this package, you assume all risk for any consequences and agree not to hold me or my company liable._ If you are OK with that ...
 
-<a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04t2E000003ocF6QAI">
-    <img src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png" alt="Deploy to Salesforce" title="Deploy to Salesforce" />
-</a>
+[Install the Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t2E000003ocFLQAY)
 
 ## Acknowledgements
 
@@ -107,4 +106,4 @@ I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com)
 
 [John Meyer / johnsfdemo](https://github.com/johnsfdemo)
 
-**Current Version**: 1.1.2
+**Current Version**: 1.2
