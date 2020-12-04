@@ -2,7 +2,7 @@
 
 <h1 align="center">LIGHTNING BARCODE SCANNER</h1>
 <p align="center">
-This package contains Lightning components and other support to scan barcodes and take actions within the [Salesforce mobile app](https://www.salesforce.com/solutions/mobile/overview/) using the text that was scanned in.
+This package contains Lightning components and other support to scan barcodes and take actions within the <a href="https://www.salesforce.com/solutions/mobile/overview/">Salesforce mobile app</a> using the text that was scanned in.
 </p>
 
 ## Summary
