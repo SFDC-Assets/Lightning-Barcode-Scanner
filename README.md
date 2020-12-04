@@ -2,14 +2,14 @@
 
 <h1 align="center">LIGHTNING BARCODE SCANNER</h1>
 <p align="center">
-This package contains Lightning components and other support to scan barcodes natively in Salesforce and take actions within Salesforce using the text that was scanned in.
+This package contains Lightning components and other support to scan barcodes and take actions within the [Salesforce mobile app](https://www.salesforce.com/solutions/mobile/overview/) using the text that was scanned in.
 </p>
 
 ## Summary
 
-As of the Winter '21 release, Salesforce implements native barcode scanning on supported devices. The first Lightning component in this package allows a user to scan a barcode and either open a scanned URL or take action on the scanned text as part of a home, app, record, or community page. The second is a Lightning flow component that allows bar code scanning to be part of a flow.
+As of the Winter '21 release, Salesforce can take advantage of the native barcode scanning abilities of supported mobile devices. The first Lightning component in this package allows a user to scan a barcode and either open a scanned URL or take action on the scanned text as part of a home, app, record, or community page. The second is a Lightning flow component that allows bar code scanning to be part of a flow.
 
-**NOTE**: *The native barcode scanning capability of Salesforce is still in the beta stage and should be used at your own risk. Furthermore, purchasing decisions should be made on products from Salesforce that are generally available. This capability will also need to go through Salesforce Government Cloud interoperability testing and may not be within the FedRAMP boundary for U.S. Federal customers.*
+**NOTE**: *This capability is still in the beta stage and should be used at your own risk. Furthermore, purchasing decisions should be made on products from Salesforce that are generally available. This capability will also need to go through Salesforce Government Cloud interoperability testing and may not be within the FedRAMP boundary for U.S. Federal customers.*
 
 ## Installation and Setup
 
@@ -94,7 +94,7 @@ I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com)
 ## Acknowledgements
 
 - Thanks to Salesforce Platform specialist [Troy Hedges](https://github.com/thedges) for suggesting the flow and Apex action types.
-- Thanks to Salesforce solutions engineer John Scardino for suggesting the flow component.
+- Thanks to Salesforce solutions engineer [John Scardino](https://github.com/thisisjohnny) for suggesting the flow component.
 
 ## References
 
