@@ -7,7 +7,7 @@ This package contains Lightning components and other support to scan barcodes an
 
 ## Summary
 
-As of the Winter '21 release, Salesforce can take advantage of the native barcode scanning abilities of supported mobile devices. The first Lightning component in this package allows a user to scan a barcode and either open a scanned URL or take action on the scanned text as part of a home, app, record, or community page. The second is a Lightning flow component that allows bar code scanning to be part of a flow.
+As of the Winter '21 release, Salesforce can take advantage of the native barcode scanning abilities of supported mobile devices. The first is a Lightning flow component that allows bar code scanning to be part of a flow. The second Lightning component in this package allows a user to scan a barcode and either open a scanned URL or take action on the scanned text as part of a home, app, record, or community page.
 
 **NOTE**: *This capability is still in the beta stage and should be used at your own risk. Furthermore, purchasing decisions should be made on products from Salesforce that are generally available. This capability will also need to go through Salesforce Government Cloud interoperability testing and may not be within the FedRAMP boundary for U.S. Federal customers.*
 
@@ -19,7 +19,24 @@ As of the Winter '21 release, Salesforce can take advantage of the native barcod
 
 **Important**: After installation, you must assign the `Barcode Scanner` permission set to anyone who needs to use the component. This permission set grants access to the Apex classes that allow full functionality of the component.
 
-## Component 1: Standalone Lightning Component
+## Component 1: Flow Component
+
+This component allows you to insert a barcode scan button into a screen flow. The scanned text will be placed in a variable that you must create as a resource in your flow:
+
+![Variable](images/Scanner_Text_Variable.png)
+
+To use the scanner, simply add the flow component to your canvas:
+
+![Flow canvas](images/Flow_Canvas.png)
+
+You have two options regarding the behavior of the component after a code is successfully scanned:
+
+- **You can remain on the same screen of the flow**. In this case, a toast will appear informing you that the scan was successfully performed. You have the option of customizing the message that appears in the toast.
+- **You can have the component automatically advance to the next item in the flow**. For this to work, you must have a "Next" button on your flow screen. If you choose this option, the next step in the flow will be performed and no toast message will appear, even if you have customized a success message for it.
+
+There is an example flow called `Barcode Scanner Flow Component Template` included in the package which illustrates the component (make a copy of the template if you want to modify it, as any changes to the flow will be overwritten if you upgrade the package to a new version).
+
+## Component 2: Standalone Lightning Component
 
 Create a Lightning app, home, or record page with the Lightning App Builder and drag the `Barcode Scanner` custom component onto the canvas where you would like to place it.
 
@@ -47,23 +64,6 @@ public interface BarcodeScannerApexItem {
 You have the option of hiding the entire component if no valid scanning capability is found on your device. If this option is not selected, and no valid scanner is found, the component still appears with the scan button greyed out.
 
 You also have the option to open a debug panel under the scan button after the barcode is scanned. The panel will contain the raw text of the code that was scanned. This could be useful for debugging your demos, but you will probably want to turn it off when done.
-
-## Component 2: Flow Component
-
-This component allows you to insert a barcode scan button into a screen flow. The scanned text will be placed in a variable that you must create as a resource in your flow:
-
-![Variable](images/Scanner_Text_Variable.png)
-
-To use the scanner, simply add the flow component to your canvas:
-
-![Flow canvas](images/Flow_Canvas.png)
-
-You have two options regarding the behavior of the component after a code is successfully scanned:
-
-- **You can remain on the same screen of the flow**. In this case, a toast will appear informing you that the scan was successfully performed. You have the option of customizing the message that appears in the toast.
-- **You can have the component automatically advance to the next item in the flow**. For this to work, you must have a "Next" button on your flow screen. If you choose this option, the next step in the flow will be performed and no toast message will appear, even if you have customized a success message for it.
-
-There is an example flow called `Barcode Scanner Flow Component Template` included in the package which illustrates the component (make a copy of the template if you want to modify it, as any changes to the flow will be overwritten if you upgrade the package to a new version).
 
 ## Creating and Embedding Barcodes in Salesforce
 
