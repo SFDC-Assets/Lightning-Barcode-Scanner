@@ -7,7 +7,9 @@ This package contains Lightning components and other support to scan barcodes an
 
 ## Summary
 
-As of the Winter '21 release, Salesforce can take advantage of the native barcode scanning abilities of supported mobile devices. The first is a Lightning flow component that allows bar code scanning to be part of a flow. The second Lightning component in this package allows a user to scan a barcode and either open a scanned URL or take action on the scanned text as part of a home, app, record, or community page.
+As of the Winter '21 release, Salesforce can take advantage of the native barcode scanning abilities of supported mobile devices. The first is a Lightning flow component that allows bar code scanning to be part of a flow. The second Lightning component in this package allows a user to scan a barcode and either open a scanned URL or take action on the scanned text as part of a home, app, or record page.
+
+**NOTE**: These components will **NOT** work on an experience (formerly "community") page.
 
 **NOTE**: *This capability is still in the beta stage and should be used at your own risk. Furthermore, purchasing decisions should be made on products from Salesforce that are generally available. This capability will also need to go through Salesforce Government Cloud interoperability testing and may not be within the FedRAMP boundary for U.S. Federal customers.*
 
@@ -89,7 +91,7 @@ IMAGE('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' & Id, Nam
 
 I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com) and I develop solutions for my customers to demonstrate the capabilities of the amazing Salesforce platform. _This package represents functionality that I have used for demonstration purposes and the content herein is definitely not ready for actual production use; specifically, it has not been tested extensively nor has it been written with security and access controls in mind. By installing this package, you assume all risk for any consequences and agree not to hold me or my company liable._ If you are OK with that ...
 
-[Install the Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t2E000003ocFLQAY)
+[Install the Package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t2E000003ZU3kQAG)
 
 ## Acknowledgements
 
@@ -106,4 +108,4 @@ I am a pre-sales Solutions Engineer for [Salesforce](https://www.salesforce.com)
 
 [John Meyer / johnsfdemo](https://github.com/johnsfdemo)
 
-**Current Version**: 1.2
+**Current Version**: 1.2.1
